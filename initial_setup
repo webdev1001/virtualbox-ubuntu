@@ -15,3 +15,20 @@ sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-gues
 ###############################################################################################
 
 sudo apt-get install dpkg-dev virtualbox-dkms
+
+
+###############################################################
+#                                                             #
+# How to panamax Ubuntu guest on VirtualBox                   #
+#                                                             #
+###############################################################
+
+Ubuntu Desktop Users: Download and run the script as shown.
+
+$ curl http://download.panamax.io/installer/ubuntu.sh | bash
+
+After the installation, you can open a browser window at http://panamax.local:3000/, to view Panamax.
+
+For a menu of all commands available to you, simply run:
+
+$ panamax
