@@ -7,4 +7,11 @@
 
 sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
 
+###############################################################################################
+#                                                                                             #
+# To install Vagrant on your cloud server, you need to download and run the installation kit. 
+# Before going further, be sure that you have dpkg and Virtual box installed:
+#                                                                                             #
+###############################################################################################
 
+sudo apt-get install dpkg-dev virtualbox-dkms
