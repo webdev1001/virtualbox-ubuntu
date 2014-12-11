@@ -1,0 +1,10 @@
+###############################################################
+#                                                             #
+# How to change resolution of the Ubuntu guest on VirtualBox  #
+#                                                             #
+###############################################################
+
+
+sudo apt-get install virtualbox-guest-utils virtualbox-guest-x11 virtualbox-guest-dkms
+
+
