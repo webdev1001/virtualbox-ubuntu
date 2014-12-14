@@ -1,0 +1,41 @@
+####################################################
+
+Optimizing web fonts with Font Load Events API
+
+https://www.igvita.com/2014/01/31/optimizing-web-font-rendering-performance/
+
+https://github.com/webdev1001/webfontloader
+
+#################################################
+
+
+
+Finally, we come to the most exciting part of this entire story: Font Load Events API. In a nutshell, this API will allow us to manage and define how and when the fonts are loaded – we can schedule font downloads at will, we can specify how and when the font will be rendered, and more. If you're familiar with the Web Font Loader JS library, then think of this API as that and more but implemented natively in the browser:
+
+var font = new FontFace("FontA", "url(http://mysite.com/fonts/fontA.woff)", {});
+font.ready().then(function() {
+  // font loaded.. swap in the text / define own behavior.
+});
+
+font.load(); // initiate immediate fetch / don't block on render tree!
+
+
+Font Load Events API gives us complete control over which fonts are used, when they are swapped in (i.e. should they block rendering), and when they're downloaded. In the example above we construct a FontFace object directly in JavaScript and trigger an immediate fetch – we can inline this snippet at the top of our page and avoid blocking on CSSOM and DOM entirely! Best of all, you can already play with this API in Canary builds of Chrome, and if all goes well it should find its way into stable release by M35.
+
+
+
+#########################################
+
+Web font performance checklist
+
+#########################################
+
+Web fonts offer a lot of benefits: improved readability, accessibility (searchable, selectable, zoomable), branding, and when done well, beautiful results. It's not a question of if web fonts should be used, but how to optimize their use. To that end, a quick performance checklist:
+
+Audit your font usage and keep it lean.
+Make sure font resources are optimized - see Google Web Fonts tricks.
+Instrument your font resources with Resource Timing: measure → optimize.
+Optimize the transfer latency and time of initial fetch for each font.
+Optimize your critical rendering path, eliminate unnecessary JS, etc.
+Spend some time playing with the Font Load Events API.
+Just because the page is using a web font, or several, doesn't mean it will (or has to) render slower. A well optimized site can deliver a better and faster experience by using web fonts.
